@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 对比大师</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f8f6ff',
+                100: '#f1edff',
+                200: '#e5dbff',
+                300: '#d1c0ff',
+                400: '#BFA5FF', // 用户指定的主色调
+                500: '#a782ff',
+                600: '#8e57f5',
+                700: '#7a3de1',
+                800: '#6632be',
+                900: '#552a9d',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .mono {
+            font-family: 'Fira Code', monospace;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "openai": "https://esm.sh/openai@^4.67.0",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.3",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "diff": "https://esm.sh/diff@^8.0.3",
+    "html-to-image": "https://esm.sh/html-to-image@^1.11.11"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+{
+  "name": "文本对比大师",
+  "description": "专业级文本文件对比工具，支持 Markdown 及任意文本文档。提供差异高亮显示，并使用 AI 智能总结版本间的变更内容。",
+  "requestFramePermissions": []
+}
