@@ -220,7 +220,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="bg-white border-t border-gray-200 py-6 text-center text-gray-400 text-xs font-medium">
-        <p>© 2024 文本对比大师 • 由通用 AI SDK 提供技术支持</p>
+        <p>© 2026 文本对比大师 • 由通用 AI SDK 提供技术支持</p>
       </footer>
     </div>
   );
