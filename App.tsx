@@ -175,14 +175,14 @@ const App: React.FC = () => {
                </div>
                
                <div className="flex flex-wrap items-center gap-3">
-                 <button
+                 {/* <button
                   disabled={isSummarizing}
                   onClick={handleSummarize}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 font-semibold transition-all border border-primary-200 disabled:opacity-50"
                  >
                    <Sparkles size={18} className={isSummarizing ? "animate-pulse" : ""} />
                    {isSummarizing ? "AI 正在分析..." : "AI 智能总结"}
-                 </button>
+                 </button> */}
 
                  <button
                   disabled={isDownloading}

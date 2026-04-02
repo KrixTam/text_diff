@@ -24,16 +24,22 @@
 ## 3. 核心流程实现
 
 ### 3.1 差异比对逻辑
-应用调用 `diffLines(content1, content2)`。该方法不依赖文件格式，只要是文本字符串即可进行行级比对
+应用调用 `diffLines(content1, content2)`。该方法不依赖文件格式，只要是文本字符串即可进行行级比对。
+
+此外，应用支持 **行内差异高亮 (Intra-line highlighting)**：
+- 在 `DiffDisplay.tsx` 中使用 `diffWordsWithSpace` 对比配对的删除和新增行。
+- 通过 `WordHighlightedLine` 组件将具体的单词级差异以显著的背景色标出，提升对比的精细度。
 
 ### 3.2 文件支持范围
-通过在 `input[type="file"]` 的 `accept` 属性中定义常用文本和代码后缀，引导用户上传正确的文件，同时在底层通过 `FileReader.readAsText` 统一作为 UTF-8 文本处理
+通过在 `input[type="file"]` 的 `accept` 属性中定义常用文本和代码后缀，引导用户上传正确的文件，同时在底层通过 `FileReader.readAsText` 统一作为 UTF-8 文本处理。
 
-### 3.3 AI 总结数据流
-在 `/services/ai.ts` 中基于 OpenAI SDK 的 `chat.completions.create`：
+### 3.3 AI 总结数据流 (可选功能)
+虽然前端触发入口（按钮）目前在 `App.tsx` 中可能被隐藏，但逻辑已就绪：
+- 在 `/services/ai.ts` 中基于 OpenAI SDK 的 `chat.completions.create`：
 - 从环境变量读取 `OPENAI_API_KEY`、`OPENAI_BASE_URL`、`OPENAI_MODEL`
 - 注入 `system` 指令确保总结风格清晰、简洁，中文输出
 - 将两份文本的前 5000 字符传入 `user` 内容进行分析
 - 通过 `temperature: 0.2` 控制输出稳定性与一致性
+- `AISummary.tsx` 支持 Markdown 渲染（分割线、表格等），并显示当前使用的模型名称。
 
 ---
